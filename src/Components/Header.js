@@ -15,6 +15,9 @@ return (
                     <li>
                         <Link to="/lists">Lists</Link>
                     </li>
+                    <li>
+                        <Link to="/things">Things</Link>
+                    </li>
                 </ul>
             </div>
         </nav>

@@ -15,6 +15,9 @@ textarea{
     height: 150px;
     margin: 35px auto;
     font-size: 25px;
+    /*max-height: 150px;*/
+    /*max-width: 150px;*/
+    resize: none;
 }
 .btn-container{
     display: flex;
