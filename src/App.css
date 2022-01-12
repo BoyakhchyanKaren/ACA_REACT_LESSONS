@@ -1,0 +1,44 @@
+input{
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+.card-parent{
+    height: 600px;
+    width: 500px;
+    margin: 150px auto;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px gainsboro;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+}
+label{
+    margin-left: 10px;
+    font-size: 18px;
+    font-family: "Yu Gothic";
+}
+.footer-container{
+    display: flex;
+    margin-top: 25px;
+    justify-content: space-between;
+    font-family: "Yu Gothic UI";
+}
+.btn-submit{
+    border: 1px solid rgb(69, 69, 223);
+    background-color: rgb(69, 69, 223);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 25px;
+    width: 100%;
+}
