@@ -1,0 +1,57 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: rebeccapurple;
+}
+body{
+  text-align: center;
+  background-color: black;
+}
+.App{
+  display: flex;
+  flex-direction: column;
+}
+.inp-btn{
+  margin-top: 80px;
+  display: flex;
+  gap:40px;
+  margin-left: 50px;
+}
+label{
+  display: block;
+  text-align: left;
+} 
+.inp2{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 14px;
+}
+.table-div{
+  margin-left: 50px;
+  margin-top: 15px;
+}
+th{
+  width: 30%;
+}
+tr{
+  height: 30px;
+}
+td{
+  background-color: white;
+}
+button{
+  /* margin-left: 15px; */
+  border-radius: 5px;
+  border: 1px solid fuchsia;
+  width: 60px;
+  cursor: pointer;
+}
+input{
+  /* margin-right: 20px; */
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid transparent;
+}
