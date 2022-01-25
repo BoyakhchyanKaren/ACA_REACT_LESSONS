@@ -2,22 +2,23 @@ import './App.css';
 import {useState} from "react";
 
 function App() {
-    const people = [
-        {name:"Obama", age:"60", country:"USA", vote:0},
-        {name:"John", age:"55", country:"USA", vote:0},
-        {name:"Vashington", age:"65", country:"USA", vote:0},
-        {name:"Tramp", age:"70", country:"USA", vote:0},
-    ];
-    let [candidates, setCandidates] = useState(people);
-    let [text, setText] = useState("");
+
+    let newCandidate = {name: "", age: 65, country: "USA", votes: 0};
+    let [name, setName] = useState("");
+    let [candidates, setCandidates] = useState([]);
     let handleClick = () => {
-        for (let i = 0; i < candidates.length; i++) {
-            if(candidates[i].name.includes(text)){
-                candidates[i].vote++;
-                setCandidates([...candidates]);
-            }else{
-                setCandidates(candidates)
-            };
+        if( name === "" || name === undefined ){
+            setCandidates([...candidates]);
+            return;
+        }
+        let checkCandidate = candidates.find(el => el.name === name);
+        if(!checkCandidate){
+            newCandidate.name = name;
+            newCandidate.votes++
+            setCandidates([...candidates, newCandidate]);
+        }else{
+            checkCandidate.votes++;
+            setCandidates([...candidates]);
         }
     };
     return (
@@ -28,10 +29,10 @@ function App() {
                     <div>
                         <label htmlFor="for-name">Candidate name</label>
                         <input
-                            value={text}
+                            value={name}
                             id="for-name"
                             className="inp"
-                            onChange={(e) => setText(e.target.value)}
+                            onChange={(e) => setName(e.target.value)}
                         />
                     </div>
                     <div>
@@ -40,7 +41,7 @@ function App() {
                             className="btn"
                             onClick={() => {
                                 handleClick();
-                                setText("")
+                                setName("")
                             }}
                         >
                             Vote
@@ -51,12 +52,12 @@ function App() {
             <div>
                 <table>
                     <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Age</th>
-                            <th>Country</th>
-                            <th>Count</th>
-                        </tr>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Country</th>
+                        <th>Count</th>
+                    </tr>
                     </thead>
                     <tbody>
                     {
@@ -66,7 +67,7 @@ function App() {
                                     <td>{candidate.name}</td>
                                     <td>{candidate.age}</td>
                                     <td>{candidate.country}</td>
-                                    <td>{candidate.vote}</td>
+                                    <td>{candidate.votes}</td>
                                 </tr>
                             )
                         })
@@ -79,3 +80,4 @@ function App() {
 };
 
 export default App;
+
