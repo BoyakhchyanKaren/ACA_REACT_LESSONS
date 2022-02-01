@@ -20,3 +20,21 @@ const concat = arr1.concat(arr2, {name:"Karen"}, arr3);
 const myConcat = arr1.myConcat(arr2, {name:"Karen"}, arr3);
 console.log(concat);
 console.log(myConcat);
+
+
+
+
+
+Array.prototype.myConcat = function (...arg) {
+	let rec = (arr) => {
+		for(let item of arr){
+			if(!Array.isArray(item)){
+				this.push(item);
+			}else{
+				rec(item);
+			}
+		}
+	};
+	rec(arg);
+	return this;
+};
